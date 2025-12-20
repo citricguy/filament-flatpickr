@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Citricguy\FilamentAirDatepicker\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class FilamentAirDatepickerCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'filament-air-datepicker';
 
     public $description = 'My command';
 

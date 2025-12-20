@@ -1,65 +1,71 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "citricguy/filament-air-datepicker",
+    "description": "Integration for Filament with Air Datepicker as a field.",
     "keywords": [
-        ":vendor_name",
+        "citricguy",
         "laravel",
-        ":package_slug"
+        "filament-air-datepicker"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/citricguy/filament-air-datepicker",
     "support": {
-        "issues": "https://github.com/:vendor_slug/:package_slug/issues",
-        "source": "https://github.com/:vendor_slug/:package_slug"
+        "issues": "https://github.com/citricguy/filament-air-datepicker/issues",
+        "source": "https://github.com/citricguy/filament-air-datepicker"
     },
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Josh Sommers",
+            "email": "citricguy@gmail.com",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^8.1",
-        "filament/filament": "^3.0",
-        "filament/forms": "^3.0",
-        "filament/tables": "^3.0",
+        "php": "^8.3",
+        "filament/filament": "^4.0",
+        "filament/forms": "^4.0",
+        "filament/tables": "^4.0",
         "spatie/laravel-package-tools": "^1.15.0"
     },
     "require-dev": {
         "laravel/pint": "^1.0",
-        "nunomaduro/collision": "^7.9",
-        "nunomaduro/larastan": "^2.0.1",
-        "orchestra/testbench": "^8.0",
-        "pestphp/pest": "^2.1",
-        "pestphp/pest-plugin-arch": "^2.0",
-        "pestphp/pest-plugin-laravel": "^2.0",
+        "nunomaduro/collision": "^8.0",
+        "larastan/larastan": "^3.0",
+        "orchestra/testbench": "^9.0|^10.0",
+        "pestphp/pest": "^3.0",
+        "pestphp/pest-plugin-arch": "^3.0",
+        "pestphp/pest-plugin-laravel": "^3.0",
+        "pestphp/pest-plugin-livewire": "^3.0",
         "phpstan/extension-installer": "^1.1",
-        "phpstan/phpstan-deprecation-rules": "^1.0",
-        "phpstan/phpstan-phpunit": "^1.0",
-        "spatie/laravel-ray": "^1.26"
+        "phpstan/phpstan-deprecation-rules": "^2.0",
+        "phpstan/phpstan-phpunit": "^2.0",
+        "rector/rector": "^2.0"
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "Citricguy\\FilamentAirDatepicker\\": "src/",
+            "Citricguy\\FilamentAirDatepicker\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/"
+            "Citricguy\\FilamentAirDatepicker\\Tests\\": "tests/"
         }
     },
     "scripts": {
         "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
-        "analyse": "vendor/bin/phpstan analyse",
-        "test": "vendor/bin/pest",
+        "analyse": "phpstan analyse",
+        "lint": "pint",
+        "refactor": "rector",
+        "test": "pest",
+        "test:lint": "pint --test",
+        "test:refactor": "rector --dry-run",
         "test-coverage": "vendor/bin/pest --coverage",
         "format": "vendor/bin/pint"
     },
     "config": {
         "sort-packages": true,
         "allow-plugins": {
+            "composer/package-versions-deprecated": true,
             "pestphp/pest-plugin": true,
             "phpstan/extension-installer": true
         }
@@ -67,10 +73,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Citricguy\\FilamentAirDatepicker\\FilamentAirDatepickerServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "FilamentAirDatepicker": "Citricguy\\FilamentAirDatepicker\\Facades\\FilamentAirDatepicker"
             }
         }
     },
