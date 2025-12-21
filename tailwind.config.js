@@ -1,10 +1,11 @@
-const preset = require('./vendor/filament/filament/tailwind.config.preset')
-
-module.exports = {
-    presets: [preset],
+/** @type {import('tailwindcss').Config} */
+export default {
     content: [
-        './app/Filament/**/*.php',
-        './resources/views/filament/**/*.blade.php',
+        './resources/**/*.{js,php,blade.php}',
         './vendor/filament/**/*.blade.php',
     ],
+    theme: {
+        extend: {},
+    },
+    plugins: [],
 }

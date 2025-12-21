@@ -8,7 +8,7 @@ The Laravel Boost guidelines are specifically curated by Laravel maintainers for
 ## Foundational Context
 This application is a Laravel application and its main Laravel ecosystems package & versions are below. You are an expert with them all. Ensure you abide by these specific packages & versions.
 
-- php - 8.4.15
+- php - 8.4.16
 
 ## Conventions
 - You must follow all existing code conventions used in this application. When creating or editing a file, check sibling files for the correct structure, approach, naming.
@@ -36,7 +36,6 @@ This application is a Laravel application and its main Laravel ecosystems packag
 
 ## Laravel Boost
 - Laravel Boost is an MCP server that comes with powerful tools designed specifically for this application. Use them.
-- See `INSTALL_BOOST.md` for step-by-step instructions we followed to install Boost in this repository (database setup, cache table migration, and how to start the MCP server).
 
 ## Artisan
 - Use the `list-artisan-commands` tool when you need to call an Artisan command to double check the available parameters.

@@ -7,7 +7,7 @@
             "command": [
                 "wsl.exe",
                 "/usr/bin/php8.4",
-                "/home/josh/projects/filament-air-datepicker/vendor/orchestra/testbench-core/laravel/artisan",
+                "/home/josh/projects/filament-flatpickr/vendor/orchestra/testbench-core/laravel/artisan",
                 "boost:mcp"
             ]
         }

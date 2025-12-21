@@ -1,15 +1,15 @@
 {
-    "name": "citricguy/filament-air-datepicker",
-    "description": "Integration for Filament with Air Datepicker as a field.",
+    "name": "citricguy/filament-flatpickr",
+    "description": "Integration for Filament with Flatpickr as a field.",
     "keywords": [
         "citricguy",
         "laravel",
-        "filament-air-datepicker"
+        "filament-flatpickr"
     ],
-    "homepage": "https://github.com/citricguy/filament-air-datepicker",
+    "homepage": "https://github.com/citricguy/filament-flatpickr",
     "support": {
-        "issues": "https://github.com/citricguy/filament-air-datepicker/issues",
-        "source": "https://github.com/citricguy/filament-air-datepicker"
+        "issues": "https://github.com/citricguy/filament-flatpickr/issues",
+        "source": "https://github.com/citricguy/filament-flatpickr"
     },
     "license": "MIT",
     "authors": [
@@ -20,14 +20,14 @@
         }
     ],
     "require": {
-        "php": "^8.3",
+        "php": "^8.3|^8.4",
         "filament/filament": "^4.0",
         "filament/forms": "^4.0",
         "filament/tables": "^4.0",
-        "spatie/laravel-package-tools": "^1.15.0"
+        "spatie/laravel-package-tools": "^1.16"
     },
     "require-dev": {
-        "laravel/pint": "^1.0",
+        "laravel/pint": "^1.18",
         "nunomaduro/collision": "^8.0",
         "larastan/larastan": "^3.0",
         "orchestra/testbench": "^9.0|^10.0",
@@ -35,7 +35,7 @@
         "pestphp/pest-plugin-arch": "^3.0",
         "pestphp/pest-plugin-laravel": "^3.0",
         "pestphp/pest-plugin-livewire": "^3.0",
-        "phpstan/extension-installer": "^1.1",
+        "phpstan/extension-installer": "^1.4",
         "phpstan/phpstan-deprecation-rules": "^2.0",
         "phpstan/phpstan-phpunit": "^2.0",
         "rector/rector": "^2.0",
@@ -43,13 +43,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Citricguy\\FilamentAirDatepicker\\": "src/",
-            "Citricguy\\FilamentAirDatepicker\\Database\\Factories\\": "database/factories/"
+            "Citricguy\\FilamentFlatpickr\\": "src/",
+            "Citricguy\\FilamentFlatpickr\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Citricguy\\FilamentAirDatepicker\\Tests\\": "tests/"
+            "Citricguy\\FilamentFlatpickr\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -77,10 +77,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Citricguy\\FilamentAirDatepicker\\FilamentAirDatepickerServiceProvider"
+                "Citricguy\\FilamentFlatpickr\\FilamentFlatpickrServiceProvider"
             ],
             "aliases": {
-                "FilamentAirDatepicker": "Citricguy\\FilamentAirDatepicker\\Facades\\FilamentAirDatepicker"
+                "FilamentFlatpickr": "Citricguy\\FilamentFlatpickr\\Facades\\FilamentFlatpickr"
             }
         }
     },

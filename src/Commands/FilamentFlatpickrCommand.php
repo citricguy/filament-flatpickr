@@ -1,12 +1,12 @@
 <?php
 
-namespace Citricguy\FilamentAirDatepicker\Commands;
+namespace Citricguy\FilamentFlatpickr\Commands;
 
 use Illuminate\Console\Command;
 
-class FilamentAirDatepickerCommand extends Command
+class FilamentFlatpickrCommand extends Command
 {
-    public $signature = 'filament-air-datepicker';
+    public $signature = 'filament-flatpickr';
 
     public $description = 'My command';
 

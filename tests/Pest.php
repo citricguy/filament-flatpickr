@@ -1,5 +1,5 @@
 <?php
 
-use Citricguy\FilamentAirDatepicker\Tests\TestCase;
+use Citricguy\FilamentFlatpickr\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);

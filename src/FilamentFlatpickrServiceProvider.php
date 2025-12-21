@@ -1,9 +1,9 @@
 <?php
 
-namespace Citricguy\FilamentAirDatepicker;
+namespace Citricguy\FilamentFlatpickr;
 
-use Citricguy\FilamentAirDatepicker\Commands\FilamentAirDatepickerCommand;
-use Citricguy\FilamentAirDatepicker\Testing\TestsFilamentAirDatepicker;
+use Citricguy\FilamentFlatpickr\Commands\FilamentFlatpickrCommand;
+use Citricguy\FilamentFlatpickr\Testing\TestsFilamentFlatpickr;
 use Filament\Support\Assets\AlpineComponent;
 use Filament\Support\Assets\Asset;
 use Filament\Support\Assets\Css;
@@ -16,11 +16,11 @@ use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class FilamentAirDatepickerServiceProvider extends PackageServiceProvider
+class FilamentFlatpickrServiceProvider extends PackageServiceProvider
 {
-    public static string $name = 'filament-air-datepicker';
+    public static string $name = 'filament-flatpickr';
 
-    public static string $viewNamespace = 'filament-air-datepicker';
+    public static string $viewNamespace = 'filament-flatpickr';
 
     public function configurePackage(Package $package): void
     {
@@ -36,7 +36,7 @@ class FilamentAirDatepickerServiceProvider extends PackageServiceProvider
                     ->publishConfigFile()
                     ->publishMigrations()
                     ->askToRunMigrations()
-                    ->askToStarRepoOnGitHub('citricguy/filament-air-datepicker');
+                    ->askToStarRepoOnGitHub('citricguy/filament-flatpickr');
             });
 
         $configFileName = $package->shortName();
@@ -80,18 +80,18 @@ class FilamentAirDatepickerServiceProvider extends PackageServiceProvider
         if (app()->runningInConsole()) {
             foreach (app(Filesystem::class)->files(__DIR__ . '/../stubs/') as $file) {
                 $this->publishes([
-                    $file->getRealPath() => base_path("stubs/filament-air-datepicker/{$file->getFilename()}"),
-                ], 'filament-air-datepicker-stubs');
+                    $file->getRealPath() => base_path("stubs/filament-flatpickr/{$file->getFilename()}"),
+                ], 'filament-flatpickr-stubs');
             }
         }
 
         // Testing
-        Testable::mixin(new TestsFilamentAirDatepicker);
+        Testable::mixin(new TestsFilamentFlatpickr);
     }
 
     protected function getAssetPackageName(): string
     {
-        return 'citricguy/filament-air-datepicker';
+        return 'citricguy/filament-flatpickr';
     }
 
     /**
@@ -100,9 +100,9 @@ class FilamentAirDatepickerServiceProvider extends PackageServiceProvider
     protected function getAssets(): array
     {
         return [
-            // AlpineComponent::make('filament-air-datepicker', __DIR__ . '/../resources/dist/components/filament-air-datepicker.js'),
-            Css::make('filament-air-datepicker-styles', __DIR__ . '/../resources/dist/filament-air-datepicker.css'),
-            Js::make('filament-air-datepicker-scripts', __DIR__ . '/../resources/dist/filament-air-datepicker.js'),
+            // AlpineComponent::make('filament-flatpickr', __DIR__ . '/../resources/dist/components/filament-flatpickr.js'),
+            Css::make('filament-flatpickr-styles', __DIR__ . '/../resources/dist/filament-flatpickr.css'),
+            Js::make('filament-flatpickr-scripts', __DIR__ . '/../resources/dist/filament-flatpickr.js'),
         ];
     }
 
@@ -112,7 +112,7 @@ class FilamentAirDatepickerServiceProvider extends PackageServiceProvider
     protected function getCommands(): array
     {
         return [
-            FilamentAirDatepickerCommand::class,
+            FilamentFlatpickrCommand::class,
         ];
     }
 
@@ -146,7 +146,7 @@ class FilamentAirDatepickerServiceProvider extends PackageServiceProvider
     protected function getMigrations(): array
     {
         return [
-            'create_filament-air-datepicker_table',
+            'create_filament-flatpickr_table',
         ];
     }
 }

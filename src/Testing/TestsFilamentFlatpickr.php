@@ -1,13 +1,13 @@
 <?php
 
-namespace Citricguy\FilamentAirDatepicker\Testing;
+namespace Citricguy\FilamentFlatpickr\Testing;
 
 use Livewire\Features\SupportTesting\Testable;
 
 /**
  * @mixin Testable
  */
-class TestsFilamentAirDatepicker
+class TestsFilamentFlatpickr
 {
     //
 }

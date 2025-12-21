@@ -1,6 +1,6 @@
 <?php
 
-namespace Citricguy\FilamentAirDatepicker\Database\Factories;
+namespace Citricguy\FilamentFlatpickr\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
