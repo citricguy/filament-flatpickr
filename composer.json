@@ -38,7 +38,8 @@
         "phpstan/extension-installer": "^1.1",
         "phpstan/phpstan-deprecation-rules": "^2.0",
         "phpstan/phpstan-phpunit": "^2.0",
-        "rector/rector": "^2.0"
+        "rector/rector": "^2.0",
+        "laravel/boost": "^1.8"
     },
     "autoload": {
         "psr-4": {
@@ -60,7 +61,10 @@
         "test:lint": "pint --test",
         "test:refactor": "rector --dry-run",
         "test-coverage": "vendor/bin/pest --coverage",
-        "format": "vendor/bin/pint"
+        "format": "vendor/bin/pint",
+        "boost:install": "vendor/bin/testbench artisan boost:install",
+        "boost:mcp": "vendor/bin/testbench artisan boost:mcp",
+        "boost:update": "vendor/bin/testbench artisan boost:update"
     },
     "config": {
         "sort-packages": true,

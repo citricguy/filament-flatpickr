@@ -82,6 +82,41 @@ Run refactoring checks:
 composer refactor
 ```
 
+
+## Laravel Boost (optional, dev)
+
+We include instructions for using Laravel Boost to run a local MCP server for documentation & AI guidelines while developing the package.
+
+Install Boost (dev):
+
+```bash
+composer require --dev laravel/boost
+```
+
+Install the local MCP server and guidelines (we provide wrappers that use Testbench so you can run these in this package repository):
+
+```bash
+composer boost:install
+```
+
+Start the local MCP server (for VS Code/other editor integration):
+
+```bash
+composer boost:mcp
+```
+
+Update Boost guidelines from the ecosystem:
+
+```bash
+composer boost:update
+```
+
+Notes:
+- Boost expects an Artisan environment; in package repositories we use `orchestra/testbench` to provide an application context used by the wrapper scripts above.
+- Adding Boost as a dev dependency is optional. It makes interactive docs, semantically indexed docs, and AI-guidelines available to contributors and is particularly useful for maintaining package guidance that Boost can surface to editors and agents.
+- See `INSTALL_BOOST.md` for detailed steps we followed (persistent sqlite DB, cache table migration, and troubleshooting tips).
+
+
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
