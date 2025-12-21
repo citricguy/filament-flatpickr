@@ -117,6 +117,18 @@ Notes:
 - See `INSTALL_BOOST.md` for detailed steps we followed (persistent sqlite DB, cache table migration, and troubleshooting tips).
 
 
+## Development status
+
+This repository is ready for Filament v4 plugin development.
+
+- **PHP**: ^8.3
+- **Filament**: v4
+- **Checks**: `composer test`, `composer analyse`, `composer lint` all pass locally
+
+See `INSTALL_BOOST.md` for how to enable the local Laravel Boost MCP server for docs and AI-guidance.
+
+---
+
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
