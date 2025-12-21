@@ -1,3 +1,197 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "flatpickr/dist/flatpickr.min.css";
+
+/*
+ * Filament Flatpickr - Tailwind v4 Theme
+ * Provides Filament-native styling with dark mode support
+ *
+ * Uses Filament's CSS custom properties for primary colors:
+ * --primary-50 through --primary-950
+ */
+
+@theme {
+    /* Flatpickr z-index - above Filament modals */
+    --z-flatpickr: 9999;
+}
+
+/* Base Flatpickr container styling */
+.flatpickr-calendar {
+    @apply rounded-lg border border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-800;
+    z-index: var(--z-flatpickr) !important;
+    font-family: inherit;
+}
+
+/* Calendar header */
+.flatpickr-months {
+    @apply rounded-t-lg border-b border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-gray-900;
+}
+
+.flatpickr-month {
+    @apply h-10;
+}
+
+.flatpickr-current-month {
+    @apply text-sm font-medium text-gray-900 dark:text-white;
+}
+
+.flatpickr-monthDropdown-months {
+    @apply bg-transparent text-gray-900 dark:text-white;
+}
+
+/* Navigation arrows */
+.flatpickr-prev-month,
+.flatpickr-next-month {
+    @apply flex h-8 w-8 items-center justify-center rounded-md text-gray-500 transition-colors hover:bg-gray-200 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200;
+}
+
+.flatpickr-prev-month svg,
+.flatpickr-next-month svg {
+    @apply h-4 w-4 fill-current;
+}
+
+/* Weekday headers */
+.flatpickr-weekdays {
+    @apply bg-gray-50 dark:bg-gray-900;
+}
+
+.flatpickr-weekday {
+    @apply text-xs font-medium text-gray-500 dark:text-gray-400;
+}
+
+/* Day cells */
+.flatpickr-day {
+    @apply flex h-9 w-9 items-center justify-center rounded-md text-sm font-normal text-gray-700 transition-colors hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700;
+    border: none !important;
+    line-height: 1;
+    max-width: none;
+}
+
+.flatpickr-day.today {
+    @apply font-semibold;
+    border: 1px solid var(--primary-500) !important;
+    background-color: var(--primary-50);
+    color: var(--primary-600);
+}
+
+.dark .flatpickr-day.today {
+    border-color: var(--primary-400) !important;
+    background-color: color-mix(in oklch, var(--primary-900) 30%, transparent);
+    color: var(--primary-400);
+}
+
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange {
+    @apply font-semibold text-white;
+    border-color: var(--primary-500) !important;
+    background-color: var(--primary-500) !important;
+}
+
+.flatpickr-day.selected:hover,
+.flatpickr-day.startRange:hover,
+.flatpickr-day.endRange:hover {
+    background-color: var(--primary-600) !important;
+}
+
+.dark .flatpickr-day.selected,
+.dark .flatpickr-day.startRange,
+.dark .flatpickr-day.endRange {
+    background-color: var(--primary-600) !important;
+}
+
+.dark .flatpickr-day.selected:hover,
+.dark .flatpickr-day.startRange:hover,
+.dark .flatpickr-day.endRange:hover {
+    background-color: var(--primary-500) !important;
+}
+
+.flatpickr-day.inRange {
+    @apply rounded-none;
+    background-color: var(--primary-100) !important;
+    color: var(--primary-800);
+    box-shadow: none !important;
+}
+
+.dark .flatpickr-day.inRange {
+    background-color: color-mix(in oklch, var(--primary-900) 50%, transparent) !important;
+    color: var(--primary-200);
+}
+
+.flatpickr-day.startRange {
+    @apply rounded-l-md rounded-r-none;
+}
+
+.flatpickr-day.endRange {
+    @apply rounded-l-none rounded-r-md;
+}
+
+.flatpickr-day.flatpickr-disabled,
+.flatpickr-day.flatpickr-disabled:hover,
+.flatpickr-day.prevMonthDay,
+.flatpickr-day.nextMonthDay {
+    @apply cursor-not-allowed text-gray-300 hover:bg-transparent dark:text-gray-600;
+}
+
+/* Time picker */
+.flatpickr-time {
+    @apply border-t border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800;
+}
+
+.flatpickr-time input {
+    @apply bg-transparent text-center text-gray-900 dark:text-white;
+}
+
+.flatpickr-time .numInputWrapper {
+    @apply flex items-center justify-center;
+}
+
+.flatpickr-time .numInputWrapper:hover {
+    @apply bg-gray-100 dark:bg-gray-700;
+}
+
+.flatpickr-time-separator {
+    @apply text-gray-500 dark:text-gray-400;
+}
+
+.flatpickr-am-pm {
+    @apply rounded-md bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600;
+}
+
+/* Inline mode adjustments */
+.flatpickr-calendar.inline {
+    @apply border-gray-200 shadow-none dark:border-gray-700;
+}
+
+/* Focus states for accessibility */
+.flatpickr-day:focus {
+    @apply outline-none ring-2 ring-offset-2 dark:ring-offset-gray-800;
+    --tw-ring-color: var(--primary-500);
+}
+
+/* Input field styling to match Filament */
+.flatpickr-input[readonly] {
+    @apply cursor-pointer bg-white dark:bg-gray-900;
+}
+
+/* Alt input styling */
+.flatpickr-input.flatpickr-mobile,
+.flatpickr-input ~ .form-control {
+    @apply w-full;
+}
+
+/* Animation for calendar opening */
+.flatpickr-calendar.animate.open {
+    animation: flatpickrFadeIn 0.15s ease-out;
+}
+
+@keyframes flatpickrFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

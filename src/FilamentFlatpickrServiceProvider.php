@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Citricguy\FilamentFlatpickr;
 
 use Citricguy\FilamentFlatpickr\Commands\FilamentFlatpickrCommand;
@@ -7,7 +9,6 @@ use Citricguy\FilamentFlatpickr\Testing\TestsFilamentFlatpickr;
 use Filament\Support\Assets\AlpineComponent;
 use Filament\Support\Assets\Asset;
 use Filament\Support\Assets\Css;
-use Filament\Support\Assets\Js;
 use Filament\Support\Facades\FilamentAsset;
 use Filament\Support\Facades\FilamentIcon;
 use Illuminate\Filesystem\Filesystem;
@@ -31,11 +32,9 @@ class FilamentFlatpickrServiceProvider extends PackageServiceProvider
          */
         $package->name(static::$name)
             ->hasCommands($this->getCommands())
-            ->hasInstallCommand(function (InstallCommand $command) {
+            ->hasInstallCommand(function (InstallCommand $command): void {
                 $command
                     ->publishConfigFile()
-                    ->publishMigrations()
-                    ->askToRunMigrations()
                     ->askToStarRepoOnGitHub('citricguy/filament-flatpickr');
             });
 
@@ -43,10 +42,6 @@ class FilamentFlatpickrServiceProvider extends PackageServiceProvider
 
         if (file_exists($package->basePath("/../config/{$configFileName}.php"))) {
             $package->hasConfigFile();
-        }
-
-        if (file_exists($package->basePath('/../database/migrations'))) {
-            $package->hasMigrations($this->getMigrations());
         }
 
         if (file_exists($package->basePath('/../resources/lang'))) {
@@ -83,6 +78,13 @@ class FilamentFlatpickrServiceProvider extends PackageServiceProvider
                     $file->getRealPath() => base_path("stubs/filament-flatpickr/{$file->getFilename()}"),
                 ], 'filament-flatpickr-stubs');
             }
+
+            // Publish optional Flatpickr bundled themes (for users who prefer them over default)
+            if (file_exists(__DIR__ . '/../resources/dist/themes')) {
+                $this->publishes([
+                    __DIR__ . '/../resources/dist/themes' => public_path('vendor/filament-flatpickr/themes'),
+                ], 'filament-flatpickr-themes');
+            }
         }
 
         // Testing
@@ -100,9 +102,8 @@ class FilamentFlatpickrServiceProvider extends PackageServiceProvider
     protected function getAssets(): array
     {
         return [
-            // AlpineComponent::make('filament-flatpickr', __DIR__ . '/../resources/dist/components/filament-flatpickr.js'),
-            Css::make('filament-flatpickr-styles', __DIR__ . '/../resources/dist/filament-flatpickr.css'),
-            Js::make('filament-flatpickr-scripts', __DIR__ . '/../resources/dist/filament-flatpickr.js'),
+            AlpineComponent::make('flatpickr', __DIR__ . '/../resources/dist/filament-flatpickr.js'),
+            Css::make('flatpickr-styles', __DIR__ . '/../resources/dist/filament-flatpickr.css'),
         ];
     }
 
@@ -138,15 +139,5 @@ class FilamentFlatpickrServiceProvider extends PackageServiceProvider
     protected function getScriptData(): array
     {
         return [];
-    }
-
-    /**
-     * @return array<string>
-     */
-    protected function getMigrations(): array
-    {
-        return [
-            'create_filament-flatpickr_table',
-        ];
     }
 }
