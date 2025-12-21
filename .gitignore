@@ -12,3 +12,9 @@ phpunit.xml
 phpstan.neon
 testbench.yaml
 vendor
+
+# Laravel Boost / Testbench artifacts
+/database/database.sqlite
+/.mcp.json
+/boost.json
+/.ai/
