@@ -63,13 +63,18 @@ export default function flatpickrComponent({ state, config }) {
                 }
             })
 
-            // Listen for component destruction
-            this.$cleanup(() => {
-                if (this.fp) {
-                    this.fp.destroy()
-                    this.fp = null
-                }
-            })
+            // FSRevs fix: Use destroy() lifecycle hook instead of $cleanup()
+            // for broader Alpine.js compatibility
+        },
+
+        /**
+         * Clean up the Flatpickr instance when the component is destroyed
+         */
+        destroy() {
+            if (this.fp) {
+                this.fp.destroy()
+                this.fp = null
+            }
         },
 
         /**
