@@ -301,17 +301,17 @@ class Flatpickr extends Field
         $time24hr = $this->getTime24hr();
 
         // Time only
-        if (!$hasDate && $hasTime) {
-            return $time24hr ? "H:i" : "h:i K";
+        if (! $hasDate && $hasTime) {
+            return $time24hr ? 'H:i' : 'h:i K';
         }
 
         // DateTime
         if ($hasTime) {
-            return $time24hr ? "M j, Y H:i" : "M j, Y h:i K";
+            return $time24hr ? 'M j, Y H:i' : 'M j, Y h:i K';
         }
 
         // Date only
-        return "M j, Y";
+        return 'M j, Y';
     }
 
     public function useAltInput(bool | Closure $condition = true): static
