@@ -54,8 +54,20 @@
     @apply bg-gray-50 dark:bg-gray-900;
 }
 
-.flatpickr-weekday {
+span.flatpickr-weekday {
     @apply text-xs font-medium text-gray-500 dark:text-gray-300;
+    background: transparent;
+    color: var(--color-gray-500);
+}
+
+@media (prefers-color-scheme: dark) {
+    span.flatpickr-weekday {
+        color: var(--color-gray-300) !important;
+    }
+}
+
+.dark span.flatpickr-weekday {
+    color: var(--color-gray-300) !important;
 }
 
 /* Day cells */
@@ -153,8 +165,33 @@
     @apply text-gray-500 dark:text-gray-300;
 }
 
-.flatpickr-am-pm {
+.flatpickr-time .flatpickr-am-pm {
     @apply rounded-md bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600;
+    color: var(--color-gray-700);
+}
+
+@media (prefers-color-scheme: dark) {
+    .flatpickr-time .flatpickr-am-pm {
+        color: var(--color-gray-200) !important;
+        background-color: var(--color-gray-700) !important;
+    }
+    
+    .flatpickr-time .flatpickr-am-pm:hover,
+    .flatpickr-time .flatpickr-am-pm:focus {
+        background-color: var(--color-gray-600) !important;
+        color: var(--color-gray-100) !important;
+    }
+}
+
+.dark .flatpickr-time .flatpickr-am-pm {
+    color: var(--color-gray-200) !important;
+    background-color: var(--color-gray-700) !important;
+}
+
+.dark .flatpickr-time .flatpickr-am-pm:hover,
+.dark .flatpickr-time .flatpickr-am-pm:focus {
+    background-color: var(--color-gray-600) !important;
+    color: var(--color-gray-100) !important;
 }
 
 /* Inline mode adjustments */
