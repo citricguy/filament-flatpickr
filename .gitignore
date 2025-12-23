@@ -18,3 +18,6 @@ vendor
 /.mcp.json
 /boost.json
 /.ai/
+
+# Development reference files (remove before release)
+/delete-when-done-resources/

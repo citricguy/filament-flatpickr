@@ -284,15 +284,13 @@ class Flatpickr extends Field
             return $this->sanitizeFormatString($format);
         }
 
-        // FSRevs fix: Return a sensible default altFormat based on the field type
-        // and time24hr setting so AM/PM is properly displayed when time24hr is false.
         return $this->getDefaultDisplayFormat();
     }
 
     /**
      * Get the default display format based on field configuration.
      *
-     * FSRevs addition: Provides sensible defaults that respect time24hr setting.
+     * Provides sensible defaults that respect the time24hr setting.
      */
     protected function getDefaultDisplayFormat(): string
     {
@@ -1283,9 +1281,10 @@ class Flatpickr extends Field
 
         // Dual-state path config
         if ($this->isDualStatePathMode()) {
-            // FSRevs fix: Prefix dualStatePaths with the container's state path
+            // Prefix dualStatePaths with the container's state path
             // so Livewire can find the properties in nested form data structures.
-            $containerPath = $this->getContainer()?->getStatePath();
+            $container = $this->getContainer();
+            $containerPath = $container->getStatePath();
             $prefix = $containerPath ? $containerPath . '.' : '';
 
             $config['dualStatePaths'] = [

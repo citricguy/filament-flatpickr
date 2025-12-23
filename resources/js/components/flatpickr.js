@@ -62,9 +62,6 @@ export default function flatpickrComponent({ state, config }) {
                     this.handleTimezoneChange(event.detail?.timezone)
                 }
             })
-
-            // FSRevs fix: Use destroy() lifecycle hook instead of $cleanup()
-            // for broader Alpine.js compatibility
         },
 
         /**
