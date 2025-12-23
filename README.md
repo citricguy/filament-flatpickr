@@ -7,6 +7,8 @@
 
 A powerful Flatpickr date/time picker integration for Filament v4. Features timezone handling, date ranges, multiple date selection, time slots, business hours, and 9 built-in themes.
 
+> Note: This project was heavily inspired by https://github.com/coolsam726/flatpickr. It was developed as a ground-up alternative with a focus on current Laravel and Filament versions and tailored Filament integration. Many thanks to the original project for the ideas and motivation.
+
 ## Requirements
 
 - PHP 8.3+
@@ -493,7 +495,7 @@ Please review [our security policy](.github/SECURITY.md) on how to report securi
 
 ## Credits
 
-- [Josh Maldonado](https://github.com/citricguy)
+- [Josh Sommers](https://github.com/citricguy)
 - [All Contributors](../../contributors)
 
 ## License
