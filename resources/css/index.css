@@ -181,6 +181,12 @@ span.flatpickr-weekday {
         background-color: var(--color-gray-600) !important;
         color: var(--color-gray-100) !important;
     }
+
+    .flatpickr-time input:hover,
+    .flatpickr-time input:focus {
+        background-color: var(--color-gray-700) !important;
+        color: var(--color-white) !important;
+    }
 }
 
 .dark .flatpickr-time .flatpickr-am-pm {
@@ -192,6 +198,12 @@ span.flatpickr-weekday {
 .dark .flatpickr-time .flatpickr-am-pm:focus {
     background-color: var(--color-gray-600) !important;
     color: var(--color-gray-100) !important;
+}
+
+.dark .flatpickr-time input:hover,
+.dark .flatpickr-time input:focus {
+    background-color: var(--color-gray-700) !important;
+    color: var(--color-white) !important;
 }
 
 /* Inline mode adjustments */
