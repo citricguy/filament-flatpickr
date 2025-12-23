@@ -41,7 +41,7 @@
 /* Navigation arrows */
 .flatpickr-prev-month,
 .flatpickr-next-month {
-    @apply flex h-8 w-8 items-center justify-center rounded-md text-gray-500 transition-colors hover:bg-gray-200 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200;
+    @apply flex h-8 w-8 items-center justify-center rounded-md text-gray-500 transition-colors hover:bg-gray-200 hover:text-gray-700 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-gray-100;
 }
 
 .flatpickr-prev-month svg,
@@ -55,12 +55,12 @@
 }
 
 .flatpickr-weekday {
-    @apply text-xs font-medium text-gray-500 dark:text-gray-400;
+    @apply text-xs font-medium text-gray-500 dark:text-gray-300;
 }
 
 /* Day cells */
 .flatpickr-day {
-    @apply flex h-9 w-9 items-center justify-center rounded-md text-sm font-normal text-gray-700 transition-colors hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700;
+    @apply flex h-9 w-9 items-center justify-center rounded-md text-sm font-normal text-gray-700 transition-colors hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700;
     border: none !important;
     line-height: 1;
     max-width: none;
@@ -129,7 +129,7 @@
 .flatpickr-day.flatpickr-disabled:hover,
 .flatpickr-day.prevMonthDay,
 .flatpickr-day.nextMonthDay {
-    @apply cursor-not-allowed text-gray-300 hover:bg-transparent dark:text-gray-600;
+    @apply cursor-not-allowed text-gray-300 hover:bg-transparent dark:text-gray-500;
 }
 
 /* Time picker */
@@ -150,11 +150,11 @@
 }
 
 .flatpickr-time-separator {
-    @apply text-gray-500 dark:text-gray-400;
+    @apply text-gray-500 dark:text-gray-300;
 }
 
 .flatpickr-am-pm {
-    @apply rounded-md bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600;
+    @apply rounded-md bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600;
 }
 
 /* Inline mode adjustments */
