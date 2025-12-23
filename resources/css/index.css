@@ -187,6 +187,14 @@ span.flatpickr-weekday {
         background-color: var(--color-gray-700) !important;
         color: var(--color-white) !important;
     }
+
+    .flatpickr-time .numInputWrapper span.arrowUp:after {
+        border-bottom-color: var(--color-gray-200) !important;
+    }
+
+    .flatpickr-time .numInputWrapper span.arrowDown:after {
+        border-top-color: var(--color-gray-200) !important;
+    }
 }
 
 .dark .flatpickr-time .flatpickr-am-pm {
@@ -204,6 +212,14 @@ span.flatpickr-weekday {
 .dark .flatpickr-time input:focus {
     background-color: var(--color-gray-700) !important;
     color: var(--color-white) !important;
+}
+
+.dark .flatpickr-time .numInputWrapper span.arrowUp:after {
+    border-bottom-color: var(--color-gray-200) !important;
+}
+
+.dark .flatpickr-time .numInputWrapper span.arrowDown:after {
+    border-top-color: var(--color-gray-200) !important;
 }
 
 /* Inline mode adjustments */
