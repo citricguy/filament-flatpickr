@@ -2,12 +2,23 @@
 
 All notable changes to `filament-flatpickr` will be documented in this file.
 
-## 1.0.0 - 2025-01-XX
+## 1.2.0 - 2025-01-16
 
-Initial release of Filament Flatpickr for Filament v4.
+### Added
+- **Filament v5 Support** - Added compatibility with Filament v5 while maintaining backward compatibility with v4
+- **Livewire v4 Support** - Full compatibility with Livewire v4
+
+### Fixed
+- Fixed PHPStan generic type annotation for `TestsFilamentFlatpickr` class
+
+## 1.0.0 - 2025-01-16
+
+Initial release of Filament Flatpickr for Filament v4 and v5.
 
 ### Features
 
+- **Filament v4 & v5 Support** - Compatible with both Filament v4 and v5
+- **Livewire v4 Support** - Full compatibility with Livewire v4
 - **Date/Time Picker** - Full Flatpickr integration as a Filament form field
 - **Selection Modes** - Single date, date range, and multiple date selection
 - **Time Support** - Time-only, date-only, or combined datetime with optional seconds
