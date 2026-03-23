@@ -5,16 +5,18 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/citricguy/filament-flatpickr/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/citricguy/filament-flatpickr/actions?query=workflow%3A"Fix+PHP+Code+Styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/citricguy/filament-flatpickr.svg?style=flat-square)](https://packagist.org/packages/citricguy/filament-flatpickr)
 
-A powerful Flatpickr date/time picker integration for Filament v4. Features timezone handling, date ranges, multiple date selection, time slots, business hours, and 9 built-in themes.
+A powerful Flatpickr date/time picker integration for Filament v4 and v5. Features timezone handling, date ranges, multiple date selection, time slots, business hours, and 9 built-in themes.
 
 > Note: This project was heavily inspired by https://github.com/coolsam726/flatpickr. It was developed as a ground-up alternative with a focus on current Laravel and Filament versions and tailored Filament integration. Many thanks to the original project for the ideas and motivation.
 
 ## Requirements
 
 - PHP 8.3+
-- Laravel 11+
-- Filament v4
-- Livewire 3
+- Laravel 12+
+- Laravel 13+
+- Laravel 11 best-effort compatibility
+- Filament v4 or v5
+- Livewire 3 or 4
 
 ## Installation
 
